@@ -1,7 +1,7 @@
 {{ config(
     indexes = [{'columns':['_airbyte_emitted_at'],'type':'btree'}],
     unique_key = '_airbyte_ab_id',
-    schema = "selly_express",
+    schema = "unibag",
     tags = [ "top-level" ]
 ) }}
 -- Final base SQL model
@@ -30,6 +30,6 @@ select
     {{ current_timestamp() }} as _airbyte_normalized_at,
     _airbyte_se_orders_hashid
 from {{ ref('se_orders_ab3') }}
--- se_orders from {{ source('selly_express', '_airbyte_raw_se_orders') }}
+-- se_orders from {{ source('unibag', '_airbyte_raw_se_orders') }}
 where 1 = 1
 
