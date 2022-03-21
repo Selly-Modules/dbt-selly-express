@@ -7,7 +7,6 @@
 -- Final base SQL model
 -- depends_on: {{ ref('se_orders_ab3') }}
 select
-    {{ adapter.quote('to') }},
     _id,
     {{ adapter.quote('client') }}::json->>'code' AS client_code,
     cast({{ adapter.quote('client') }}::json->'fee'->>'total' AS numeric) AS client_fee_total,
@@ -17,7 +16,6 @@ select
     cast({{ adapter.quote('courier') }}::json->'fee'->>'total' AS numeric) AS courier_fee_total,
     cast({{ adapter.quote('courier') }}::json->'fee'->>'shipping' AS numeric) AS courier_fee_shipping,
     cast({{ adapter.quote('courier') }}::json->'fee'->>'other' AS numeric) AS courier_fee_other,
-    courier,
     cast(weight AS numeric) AS weight,
     volume,
     code,
