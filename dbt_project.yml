@@ -49,7 +49,7 @@ dispatch:
 vars:
   json_column: _airbyte_data
   models_to_source:
-    se_orders_ab1: unibag._airbyte_raw_se_orders
-    se_orders_ab2: unibag._airbyte_raw_se_orders
-    se_orders_ab3: unibag._airbyte_raw_se_orders
-    se_orders: unibag._airbyte_raw_se_orders
+    se_orders_ab1: selly_express._airbyte_raw_se_orders
+    se_orders_ab2: selly_express._airbyte_raw_se_orders
+    se_orders_ab3: selly_express._airbyte_raw_se_orders
+    se_orders: selly_express._airbyte_raw_se_orders
